@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Mountain List</h1>
+
+{% for mountain in mountains %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ mountain.name }}</span>
+            <p>State: {{ mountain.state }}</p>
+            <p>Date Hiked: {{ mountain.datehiked }}</p>
+            <p>Elevation: {{ mountain.elevation }}'</p>
+        </div>
+    </div>
+
+
+{% endfor %}
+
+
+{% endblock %}
