@@ -7,5 +7,11 @@ class Mountain(models.Model):
     datehiked = models.DateField()
     elevation = models.IntegerField() 
 
-    
+# Changing this instance method
+# does not impact the database, therefore
+# no makemigrations is necessary
+def __str__(self):
+    return f'{self.name} ({self.id})'
+
+
 

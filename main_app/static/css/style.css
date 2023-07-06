@@ -12,3 +12,11 @@ body {
     padding-top: 0;
     text-align: right;
   }
+
+  nav, #footer {
+    background-color: rgb(69, 157, 69);
+  }
+
+  .green {
+    color: rgb(69, 157, 69);
+  }
