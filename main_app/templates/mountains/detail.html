@@ -10,6 +10,10 @@
                 <p>Date Hiked: {{ mountain.datehiked }}</p>
                 <p>Elevation: {{ mountain.elevation }}'</p>
             </div>
+            <div class="card-action">
+                <a href="{% url 'mountains_update' mountain.id %}">Edit</a>
+                <a href="{% url 'mountains_delete' mountain.id %}">Delete</a>
+            </div>
         </div>
 
 {% endblock %}

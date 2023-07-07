@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Mountain
 
 # baby step - usually a Model is used
@@ -28,3 +29,15 @@ def mountains_detail(request, mountain_id):
     return render(request, 'mountains/detail.html', {
         'mountain': mountain
     })
+
+class MountainCreate(CreateView):
+    model = Mountain
+    fields = '__all__'
+
+class MountainUpdate(UpdateView):
+    model = Mountain
+    fields= '__all__'
+
+class MountainDelete(DeleteView):
+    model = Mountain
+    success_url = '/mountains'

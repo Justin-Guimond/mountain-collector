@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background: linear-gradient(to bottom, white, rgb(247, 226, 134))
   }
   
   main {
@@ -13,10 +14,27 @@ body {
     text-align: right;
   }
 
-  nav, #footer {
-    background-color: rgb(69, 157, 69);
+  nav, #footer, .btn {
+    background-color: rgb(68, 141, 68);
   }
 
   .green {
-    color: rgb(69, 157, 69);
+    color: rgb(68, 141, 68);
+  }
+
+  nav .brand-logo.left {
+    padding-right: 13px;
+  }
+
+  .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: rgb(68, 141, 68);
+  }
+
+  img {
+    border-radius: 25px;
+  }
+  
+  .img-container {
+    display: flex;
+    justify-content: center;
   }
