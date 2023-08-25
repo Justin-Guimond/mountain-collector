@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Mountain(models.Model):
@@ -7,6 +8,8 @@ class Mountain(models.Model):
     state = models.CharField(max_length=20)
     datehiked = models.DateField()
     elevation = models.IntegerField() 
+    # add user_id FK column
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 # Changing this instance method
 # does not impact the database, therefore

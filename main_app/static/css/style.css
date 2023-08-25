@@ -14,11 +14,15 @@ body {
     text-align: right;
   }
 
-  nav, #footer, .btn {
+  nav, #footer, .btn, .datepicker-date-display, .datepicker-table td.is-selected {
     background-color: rgb(68, 141, 68);
   }
 
   .green {
+    color: rgb(68, 141, 68);
+  }
+
+  .datepicker-cancel, .datepicker-done {
     color: rgb(68, 141, 68);
   }
 

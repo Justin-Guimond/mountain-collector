@@ -1,15 +1,8 @@
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Mountain
-
-# baby step - usually a Model is used
-# mountains = [
-#   {'name': 'Katahdin', 'state': 'Maine', 'datehiked': '2017', 'elevation': 5269},
-#   {'name': 'Mount Bigelow (West Peak)', 'state': 'Maine', 'datehiked': '2017', 'elevation': 4145},
-#   {'name': 'Mount Bigelow (Avery Peak)', 'state': 'Maine', 'datehiked': '2017', 'elevation': 4090},
-#   {'name': 'Crocker Mountain', 'state': 'Maine', 'datehiked': '2017', 'elevation': 4228},
-#   {'name': 'South Crocker Mountain', 'state': 'Maine', 'datehiked': '2017', 'elevation': 4050},
-# ]
 
 # Create your views here.
 def home(request):
@@ -34,9 +27,14 @@ class MountainCreate(CreateView):
     model = Mountain
     fields = '__all__'
 
+    def form_valid(self, form):
+        # self.request.user is the logged in user
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 class MountainUpdate(UpdateView):
     model = Mountain
-    fields= '__all__'
+    fields = '__all__'
 
 class MountainDelete(DeleteView):
     model = Mountain
